@@ -997,14 +997,17 @@ containing a value of this type.
         public static final int kingdom_key=0x7f020061;
         public static final int monochrome=0x7f020062;
         public static final int mysterious_abyss=0x7f020063;
-        public static final int photon_debugger=0x7f020064;
-        public static final int rumbling_rose=0x7f020065;
-        public static final int sleeping_lion=0x7f020066;
-        public static final int star_seeker=0x7f020067;
-        public static final int sweet_memories=0x7f020068;
-        public static final int two_become_one=0x7f020069;
-        public static final int winners_proof=0x7f02006a;
-        public static final int wishing_lamp=0x7f02006b;
+        public static final int oathkeeper=0x7f020064;
+        public static final int oblivion=0x7f020065;
+        public static final int photon_debugger=0x7f020066;
+        public static final int rumbling_rose=0x7f020067;
+        public static final int sleeping_lion=0x7f020068;
+        public static final int star_seeker=0x7f020069;
+        public static final int sweet_memories=0x7f02006a;
+        public static final int two_become_one=0x7f02006b;
+        public static final int ultima_weapon=0x7f02006c;
+        public static final int winners_proof=0x7f02006d;
+        public static final int wishing_lamp=0x7f02006e;
     }
     public static final class id {
         public static final int action_bar=0x7f06001c;
@@ -1119,11 +1122,13 @@ containing a value of this type.
         public static final int abc_popup_menu_item_layout=0x7f030014;
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
-        public static final int activity_main=0x7f030017;
-        public static final int support_simple_spinner_dropdown_item=0x7f030018;
+        public static final int activity_keyblade_list=0x7f030017;
+        public static final int activity_main=0x7f030018;
+        public static final int support_simple_spinner_dropdown_item=0x7f030019;
     }
     public static final class menu {
-        public static final int main=0x7f0e0000;
+        public static final int keyblade_list=0x7f0e0000;
+        public static final int main=0x7f0e0001;
     }
     public static final class raw {
         public static final int keyblades=0x7f050000;
@@ -1175,6 +1180,7 @@ containing a value of this type.
         public static final int hello_world=0x7f0b000e;
         public static final int magic=0x7f0b0011;
         public static final int strength=0x7f0b0010;
+        public static final int title_activity_keyblade_list=0x7f0b0013;
     }
     public static final class style {
         /** 

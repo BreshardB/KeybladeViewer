@@ -119,6 +119,24 @@
 				"strength": "+5",
 				"magic": "+7",
 				"ability": "EXP Zero"
+			},
+			{
+				"name": "OathKeeper",
+				"strength": "+3",
+				"magic": "+3",
+				"ability": "Form Boost"
+			},
+			{
+				"name": "Oblivion",
+				"strength": "+6",
+				"magic": "+2",
+				"ability": "Drive Boost"
+			},
+			{
+				"name": "Ultima Weapon",
+				"strength": "+6",
+				"magic": "+4",
+				"ability": "MP Hastega"
 			}
 	]
 }

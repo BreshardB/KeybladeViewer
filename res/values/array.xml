@@ -21,5 +21,8 @@
         <item>@drawable/fenrir</item>
         <item>@drawable/two_become_one</item>
         <item>@drawable/winners_proof</item>
+        <item>@drawable/oathkeeper</item>
+        <item>@drawable/oblivion</item>
+        <item>@drawable/ultima_weapon</item>
     </array>
 </resources>

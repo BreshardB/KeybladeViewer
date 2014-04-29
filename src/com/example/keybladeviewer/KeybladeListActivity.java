@@ -9,50 +9,45 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 
-public class MainActivity extends ActionBarActivity implements Parcelable{
+public class KeybladeListActivity extends ActionBarActivity {
 	
 	Keyblade[] keyblades;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
-        new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades));
-    }
-    
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_keyblade_list);
+	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    
-    private class DownloadKeybladeJSON extends AsyncTask<Integer, Void, Keyblade[]> {
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
 
-		private static final String EXTRA_MESSAGE = "keyblades";
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.keyblade_list, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	private class DownloadKeybladeJSON extends AsyncTask<Integer, Void, Keyblade[]> {
 
 		@Override
 		protected Keyblade[] doInBackground(Integer... params) {
@@ -93,6 +88,16 @@ public class MainActivity extends ActionBarActivity implements Parcelable{
 		protected void onPostExecute(Keyblade[] result) {
 		}
     }
+	
+	public class KeybladeAdapter extends ArrayAdapter<Keyblade> {
+
+		public KeybladeAdapter(Context context, int resource,
+				int textViewResourceId, Keyblade[] objects) {
+			super(context, resource, textViewResourceId, keyblades);
+			// TODO Auto-generated constructor stub
+		}
+		
+	}
     
     public class Keyblade {
     	String name = "";
@@ -101,15 +106,4 @@ public class MainActivity extends ActionBarActivity implements Parcelable{
     	String ability = "";
     }
 
-	@Override
-	public int describeContents() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		
-	}
 }

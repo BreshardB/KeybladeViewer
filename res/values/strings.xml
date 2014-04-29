@@ -7,5 +7,6 @@
     <string name="strength">Strength</string>
     <string name="magic">Magic</string>
     <string name="ability">Ability</string>
+    <string name="title_activity_keyblade_list">KeybladeListActivity</string>
 
 </resources>
