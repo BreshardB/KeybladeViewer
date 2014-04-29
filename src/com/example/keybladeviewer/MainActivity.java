@@ -12,12 +12,13 @@ import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends ActionBarActivity {
 	
-	JSONArray keyblades;
+	Keyblade[] keyblades;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +48,10 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     
-    private class DownloadKeybladeJSON extends AsyncTask<Integer, Void, JSONArray> {
+    private class DownloadKeybladeJSON extends AsyncTask<Integer, Void, Keyblade[]> {
 
 		@Override
-		protected JSONArray doInBackground(Integer... params) {
+		protected Keyblade[] doInBackground(Integer... params) {
 			BufferedReader br;
 			InputStream is; 
 			try {
@@ -63,15 +64,37 @@ public class MainActivity extends ActionBarActivity {
 				}
 				br.close();
 				
-				JSONObject keyblade = new JSONObject(json);
-				JSONArray keybladeArray = (JSONArray)keyblade.getJSONArray("keyblades");
+				JSONObject keybladeJSON = new JSONObject(json);
+				JSONArray keybladeArray = (JSONArray)keybladeJSON.getJSONArray("keyblades");
+				keyblades = new Keyblade[keybladeArray.length()];
+				
+				for(int i = 0; i < keyblades.length; i++) {
+					keyblades[i] = new Keyblade();
+					JSONObject temp = (JSONObject)keybladeArray.get(i);
+					keyblades[i].name = temp.getString("name");
+					keyblades[i].strength = temp.getString("strength");
+					keyblades[i].ability = temp.getString("ability");
+					keyblades[i].magic = temp.getString("magic");
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 			
-			return null;
+			return keyblades;
 		}
+		
+		@Override
+		protected void onPostExecute(Keyblade[] result) {
+			
+		}
+    }
+    
+    public class Keyblade {
+    	String name = "";
+    	String strength = "";
+    	String magic = "";
+    	String ability = "";
     }
 }
