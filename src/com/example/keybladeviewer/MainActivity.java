@@ -1,26 +1,32 @@
 package com.example.keybladeviewer;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
+	
+	JSONArray keyblades;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+        new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades));
     }
-
-
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         
@@ -40,5 +46,32 @@ public class MainActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    
+    private class DownloadKeybladeJSON extends AsyncTask<Integer, Void, JSONArray> {
 
+		@Override
+		protected JSONArray doInBackground(Integer... params) {
+			BufferedReader br;
+			InputStream is; 
+			try {
+				is = getResources().openRawResource(params[0].intValue());
+				br = new BufferedReader(new InputStreamReader(is));
+				String json = "";
+				String buffer = null;
+				while((buffer = br.readLine()) != null) {
+					json += buffer;
+				}
+				br.close();
+				
+				JSONObject keyblade = new JSONObject(json);
+				JSONArray keybladeArray = (JSONArray)keyblade.getJSONArray("keyblades");
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			
+			return null;
+		}
+    }
 }
