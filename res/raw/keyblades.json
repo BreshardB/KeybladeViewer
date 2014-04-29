@@ -1,0 +1,124 @@
+{
+	"keyblades": [
+			{
+				"name": "Kingdom Key",
+				"strength": "+3",
+				"magic": "+1",
+				"ability": "Defender"
+			},
+			{
+				"name": "Star Seeker",
+				"strength": "+3",
+				"magic": "+1",
+				"ability": "Air Combo Plus"
+			},
+			{
+				"name": "Hidden Dragon",
+				"strength": "+2",
+				"magic": "+2",
+				"ability": "MP Rage"
+			},
+			{
+				"name": "Follow the Wind",
+				"strength": "+3",
+				"magic": "+1",
+				"ability": "Draw"
+			},
+			{
+				"name": "Monochrome",
+				"strength": "+3",
+				"magic": "+2",
+				"ability": "Item Boost"
+			},
+			{
+				"name": "Circle of Life",
+				"strength": "+4",
+				"magic": "+1",
+				"ability": "MP Haste"
+			},
+			{
+				"name": "Hero's Crest",
+				"strength": "+4",
+				"magic": "0",
+				"ability": "Air Combo Boost"
+			},
+			{
+				"name": "Wishing Lamp",
+				"strength": "+4",
+				"magic": "+3",
+				"ability": "Jackpot"
+			},
+			{
+				"name": "Decisive Pumpkin",
+				"strength": "+6",
+				"magic": "+1",
+				"ability": "Combo Boost"
+			},
+			{
+				"name": "Mysterious Abyss",
+				"strength": "+3",
+				"magic": "+3",
+				"ability": "Blizzard Boost"
+			},
+			{
+				"name": "Rumbling Rose",
+				"strength": "+5",
+				"magic": "0",
+				"ability": "Finishing Plus"
+			},
+			{
+				"name": "Photon Debugger",
+				"strength": "+3",
+				"magic": "+2",
+				"ability": "Thunder Boost"
+			},
+			{
+				"name": "Sweet Memories",
+				"strength": "0",
+				"magic": "0",
+				"ability": "Lucky Lucky"
+			},
+			{
+				"name": "Gull Wing",
+				"strength": "+3",
+				"magic": "0",
+				"ability": "Experience Boost"
+			},
+			{
+				"name": "Bond of Flame",
+				"strength": "+4",
+				"magic": "+4",
+				"ability": "Fire Boost"
+			},
+			{
+				"name": "Sleeping Lion",
+				"strength": "+5",
+				"magic": "+3",
+				"ability": "Combo Plus"
+			},
+			{
+				"name": "Fatal Crest",
+				"strength": "+3",
+				"magic": "+5",
+				"ability": "Berserk Charge"
+			},
+			{
+				"name": "Fenrir",
+				"strength": "+7",
+				"magic": "+1",
+				"ability": "Negative Combo"
+			},
+			{
+				"name": "Two Become One",
+				"strength": "+5",
+				"magic": "+4",
+				"ability": "Light & Dark"
+			},
+			{
+				"name": "Winner's Proof",
+				"strength": "+5",
+				"magic": "+7",
+				"ability": "EXP Zero"
+			}
+	]
+}
