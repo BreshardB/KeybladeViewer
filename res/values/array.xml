@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="keyblade_pics">
+        <item>@drawable/kingdom_key</item>
+        <item>@drawable/star_seeker</item>
+        <item>@drawable/hidden_dragon</item>
+        <item>@drawable/follow_the_wind</item>
+        <item>@drawable/monochrome</item>
+        <item>@drawable/circle_of_life</item>
+        <item>@drawable/heroes_crest</item>
+        <item>@drawable/wishing_lamp</item>
+        <item>@drawable/decisive_pumpkin</item>
+        <item>@drawable/mysterious_abyss</item>
+        <item>@drawable/rumbling_rose</item>
+        <item>@drawable/photon_debugger</item>
+        <item>@drawable/sweet_memories</item>
+        <item>@drawable/gull_wing</item>
+        <item>@drawable/bond_of_flame</item>
+        <item>@drawable/sleeping_lion</item>
+        <item>@drawable/fatal_crest</item>
+        <item>@drawable/fenrir</item>
+        <item>@drawable/two_become_one</item>
+        <item>@drawable/winners_proof</item>
+    </array>
+</resources>
