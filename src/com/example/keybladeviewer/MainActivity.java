@@ -14,11 +14,10 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class MainActivity extends ActionBarActivity{
 	
@@ -29,6 +28,9 @@ public class MainActivity extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        Intent intent = getIntent();
+        int position = intent.getIntExtra("Keyblade Clicked", 0);
+        
         TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
 		Drawable[] drawables = new Drawable[pics.length()];	 
 
@@ -37,6 +39,9 @@ public class MainActivity extends ActionBarActivity{
 		}
 		
 		pics.recycle();
+		
+		ImageView image = (ImageView)findViewById(R.id.image);
+		image.setImageDrawable(drawables[position]);
     }
     
     @Override
