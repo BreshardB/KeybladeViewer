@@ -11,20 +11,24 @@ import org.json.JSONObject;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class KeybladeListActivity extends ListActivity {
 	
+	public static final String MESSAGE = "Keyblade Clicked";
+
 	Keyblade[] keyblades;
 	
 	Context context = this;
@@ -32,26 +36,6 @@ public class KeybladeListActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
-		Drawable[] drawables = new Drawable[pics.length()];	 
-
-		for (int i = 0; i < pics.length(); i++) {
-			drawables[i] = pics.getDrawable(i);
-		}
-		
-		pics.recycle();
-		
-		/*Topping [] tops = new Topping[toppings.length];
-		
-		for(int i = 0; i < toppings.length; i++) {
-			tops[i] = new Topping(toppings[i], drawables[i]);
-			
-		}
-		
-		ToppingAdapter adapter = new ToppingAdapter(this, tops);
-		
-		setListAdapter(adapter);*/
 		
 		new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades));
 		
@@ -81,7 +65,7 @@ public class KeybladeListActivity extends ListActivity {
 		keyblades = result;
 	}
 	
-	private class DownloadKeybladeJSON extends AsyncTask<Integer, Void, Keyblade[]> {
+	private class DownloadKeybladeJSON extends AsyncTask<Integer, Void, Keyblade[]> implements OnItemClickListener {
 
 		@Override
 		protected Keyblade[] doInBackground(Integer... params) {
@@ -136,6 +120,16 @@ public class KeybladeListActivity extends ListActivity {
 			KeybladeAdapter adapter = new KeybladeAdapter(context, keyblades);
 			
 			setListAdapter(adapter);
+			
+			getListView().setOnItemClickListener(this);
+		}
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			Intent intent = new Intent(KeybladeListActivity.this, MainActivity.class);
+			intent.putExtra(MESSAGE, position);
+			startActivity(intent);
 		}
     }
 	

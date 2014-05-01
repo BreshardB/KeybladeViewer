@@ -10,6 +10,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -27,7 +29,14 @@ public class MainActivity extends ActionBarActivity implements Parcelable{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades));
+        TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
+		Drawable[] drawables = new Drawable[pics.length()];	 
+
+		for (int i = 0; i < pics.length(); i++) {
+			drawables[i] = pics.getDrawable(i);
+		}
+		
+		pics.recycle();
     }
     
     @Override
