@@ -9,20 +9,25 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ListActivity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
-public class KeybladeListActivity extends ActionBarActivity {
+public class KeybladeListActivity extends ListActivity {
 	
 	Keyblade[] keyblades;
+	
+	Context context = this;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -127,27 +132,39 @@ public class KeybladeListActivity extends ActionBarActivity {
 			keyblades = new Keyblade[result.length];
 			for(int i = 0; i < keyblades.length; i++) {
 				keyblades[i] = result[i];
-				Log.d("BJB", keyblades[i].name);
 			}
+			KeybladeAdapter adapter = new KeybladeAdapter(context, keyblades);
+			
+			setListAdapter(adapter);
 		}
     }
 	
 	public class KeybladeAdapter extends ArrayAdapter<Keyblade> {
 
-		public KeybladeAdapter(Context context, int resource,
-				int textViewResourceId, Keyblade[] objects) {
-			super(context, resource, textViewResourceId, keyblades);
+		public KeybladeAdapter(Context context, Keyblade[] objects) {
+			super(context, R.layout.keyblade_item, R.id.name, keyblades);
 			
 		}
 		
+		@Override
+		public View getView(final int position, View convertView, ViewGroup parent) {
+			View v = super.getView(position, convertView, parent);
+		    TextView textView = (TextView) v.findViewById(R.id.name);
+		    textView.setText(keyblades[position].name);
+
+		    return v;
+		}
+		
 	}
-    
-    public class Keyblade {
+	
+	public class Keyblade {
     	String name = "";
     	String strength = "";
     	String magic = "";
     	String ability = "";
     	Drawable pic = null;
     }
-
 }
+    
+    
+
