@@ -20,7 +20,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends ActionBarActivity implements Parcelable{
+public class MainActivity extends ActionBarActivity{
 	
 	Keyblade[] keyblades;
 
@@ -109,16 +109,4 @@ public class MainActivity extends ActionBarActivity implements Parcelable{
     	String magic = "";
     	String ability = "";
     }
-
-	@Override
-	public int describeContents() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		
-	}
 }
