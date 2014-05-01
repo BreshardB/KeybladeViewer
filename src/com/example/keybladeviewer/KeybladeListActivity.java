@@ -10,9 +10,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -24,7 +27,29 @@ public class KeybladeListActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_keyblade_list);
+		
+		TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
+		Drawable[] drawables = new Drawable[pics.length()];	 
+
+		for (int i = 0; i < pics.length(); i++) {
+			drawables[i] = pics.getDrawable(i);
+		}
+		
+		pics.recycle();
+		
+		/*Topping [] tops = new Topping[toppings.length];
+		
+		for(int i = 0; i < toppings.length; i++) {
+			tops[i] = new Topping(toppings[i], drawables[i]);
+			
+		}
+		
+		ToppingAdapter adapter = new ToppingAdapter(this, tops);
+		
+		setListAdapter(adapter);*/
+		
+		new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades));
+		
 	}
 
 	@Override
@@ -47,10 +72,15 @@ public class KeybladeListActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
+	public void setKeybladeArray(Keyblade[] result) {
+		keyblades = result;
+	}
+	
 	private class DownloadKeybladeJSON extends AsyncTask<Integer, Void, Keyblade[]> {
 
 		@Override
 		protected Keyblade[] doInBackground(Integer... params) {
+			Keyblade[] temp_keys = null;
 			BufferedReader br;
 			InputStream is; 
 			try {
@@ -65,15 +95,15 @@ public class KeybladeListActivity extends ActionBarActivity {
 				
 				JSONObject keybladeJSON = new JSONObject(json);
 				JSONArray keybladeArray = (JSONArray)keybladeJSON.getJSONArray("keyblades");
-				keyblades = new Keyblade[keybladeArray.length()];
+				temp_keys = new Keyblade[keybladeArray.length()];
 				
-				for(int i = 0; i < keyblades.length; i++) {
-					keyblades[i] = new Keyblade();
+				for(int i = 0; i < temp_keys.length; i++) {
+					temp_keys[i] = new Keyblade();
 					JSONObject temp = (JSONObject)keybladeArray.get(i);
-					keyblades[i].name = temp.getString("name");
-					keyblades[i].strength = temp.getString("strength");
-					keyblades[i].ability = temp.getString("ability");
-					keyblades[i].magic = temp.getString("magic");
+					temp_keys[i].name = temp.getString("name");
+					temp_keys[i].strength = temp.getString("strength");
+					temp_keys[i].ability = temp.getString("ability");
+					temp_keys[i].magic = temp.getString("magic");
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -81,11 +111,24 @@ public class KeybladeListActivity extends ActionBarActivity {
 				e.printStackTrace();
 			}
 			
-			return keyblades;
+			return temp_keys;
+			
+		}
+		
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			keyblades = null;
 		}
 		
 		@Override
 		protected void onPostExecute(Keyblade[] result) {
+			super.onPostExecute(result);
+			keyblades = new Keyblade[result.length];
+			for(int i = 0; i < keyblades.length; i++) {
+				keyblades[i] = result[i];
+				Log.d("BJB", keyblades[i].name);
+			}
 		}
     }
 	
@@ -94,7 +137,7 @@ public class KeybladeListActivity extends ActionBarActivity {
 		public KeybladeAdapter(Context context, int resource,
 				int textViewResourceId, Keyblade[] objects) {
 			super(context, resource, textViewResourceId, keyblades);
-			// TODO Auto-generated constructor stub
+			
 		}
 		
 	}
@@ -104,6 +147,7 @@ public class KeybladeListActivity extends ActionBarActivity {
     	String strength = "";
     	String magic = "";
     	String ability = "";
+    	Drawable pic = null;
     }
 
 }
