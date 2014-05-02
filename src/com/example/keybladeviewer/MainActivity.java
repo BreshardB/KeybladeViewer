@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity{
         setContentView(R.layout.activity_main);
         
         Intent intent = getIntent();
-        int position = intent.getIntExtra("Keyblade Clicked", 0);
+        Keyblade position = (Keyblade) intent.getSerializableExtra("Keyblade Clicked");
         
         TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
 		Drawable[] drawables = new Drawable[pics.length()];	 
@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity{
 		pics.recycle();
 		
 		ImageView image = (ImageView)findViewById(R.id.image);
-		image.setImageDrawable(drawables[position]);
+		image.setImageDrawable(drawables[0]);
     }
     
     @Override
@@ -106,12 +106,5 @@ public class MainActivity extends ActionBarActivity{
 		@Override
 		protected void onPostExecute(Keyblade[] result) {
 		}
-    }
-    
-    public class Keyblade {
-    	String name = "";
-    	String strength = "";
-    	String magic = "";
-    	String ability = "";
     }
 }

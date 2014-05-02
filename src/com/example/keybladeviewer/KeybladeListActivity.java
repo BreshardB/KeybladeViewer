@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,10 +13,11 @@ import org.json.JSONObject;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -127,8 +129,15 @@ public class KeybladeListActivity extends ListActivity {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-			Intent intent = new Intent(KeybladeListActivity.this, MainActivity.class);
-			intent.putExtra(MESSAGE, position);
+			Intent intent = new Intent(KeybladeListActivity.this, KeybladeStatView.class);
+			Log.d("BJB", keyblades[position].name);
+			intent.putExtra(MESSAGE, keyblades[position]);
+			Parcelable object = (Parcelable)keyblades[position];
+			if(object == null) {
+				Log.d("BJB", "This thing is null");
+			} else {
+				Log.d("BJB", object.toString());
+			}
 			startActivity(intent);
 		}
     }
@@ -150,14 +159,7 @@ public class KeybladeListActivity extends ListActivity {
 		}
 		
 	}
-	
-	public class Keyblade {
-    	String name = "";
-    	String strength = "";
-    	String magic = "";
-    	String ability = "";
-    	Drawable pic = null;
-    }
+    	
 }
     
     
