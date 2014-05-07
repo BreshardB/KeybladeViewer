@@ -25,4 +25,29 @@
         <item>@drawable/oblivion</item>
         <item>@drawable/ultima_weapon</item>
     </array>
+    <array name="keychain_icons">
+        <item>@drawable/kingdom_key_keychain</item>
+        <item>@drawable/star_seeker_keychain</item>
+        <item>@drawable/hidden_dragon_keychain</item>
+        <item>@drawable/follow_the_wind_keychain</item>
+        <item>@drawable/monochrome_keychain</item>
+        <item>@drawable/circle_of_life_keychain</item>
+        <item>@drawable/heroes_crest_keychain</item>
+        <item>@drawable/wishing_lamp_keychain</item>
+        <item>@drawable/decisive_pumpkin_keychain</item>
+        <item>@drawable/mysterious_abyss_keychain</item>
+        <item>@drawable/rumbling_rose_keychain</item>
+        <item>@drawable/photon_debugger_keychain</item>
+        <item>@drawable/sweet_memories_keychain</item>
+        <item>@drawable/gull_wing_keychain</item>
+        <item>@drawable/bond_of_flame_keychain</item>
+        <item>@drawable/sleeping_lion_keychain</item>
+        <item>@drawable/fatal_crest_keychain</item>
+        <item>@drawable/fenrir_keychain</item>
+        <item>@drawable/two_become_one_keychain</item>
+        <item>@drawable/winners_proof_keychain</item>
+        <item>@drawable/oathkeeper_keychain</item>
+        <item>@drawable/oblivion_keychain</item>
+        <item>@drawable/ultima_weapon_keychain</item>
+    </array>
 </resources>

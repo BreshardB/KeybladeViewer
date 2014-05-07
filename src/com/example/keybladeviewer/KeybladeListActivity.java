@@ -13,6 +13,8 @@ import org.json.JSONObject;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -139,9 +141,21 @@ public class KeybladeListActivity extends ListActivity {
     }
 	
 	public class KeybladeAdapter extends ArrayAdapter<Keyblade> {
+		
+		TypedArray icons;
+		Drawable [] drawables;
 
 		public KeybladeAdapter(Context context, Keyblade[] objects) {
 			super(context, R.layout.keyblade_item, R.id.name, keyblades);
+			
+			icons = getResources().obtainTypedArray(R.array.keychain_icons);
+			drawables = new Drawable[icons.length()];	 
+
+			for (int i = 0; i < icons.length(); i++) {
+				drawables[i] = icons.getDrawable(i);
+			}
+			
+			icons.recycle();
 			
 		}
 		
@@ -150,6 +164,7 @@ public class KeybladeListActivity extends ListActivity {
 			View v = super.getView(position, convertView, parent);
 		    TextView textView = (TextView) v.findViewById(R.id.name);
 		    textView.setText(keyblades[position].name);
+		    textView.setCompoundDrawablesWithIntrinsicBounds(drawables[position], null, null, null);
 
 		    return v;
 		}

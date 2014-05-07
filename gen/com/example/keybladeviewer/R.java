@@ -18,6 +18,7 @@ public final class R {
     }
     public static final class array {
         public static final int keyblade_pics=0x7f0d0000;
+        public static final int keychain_icons=0x7f0d0001;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -986,30 +987,53 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int background=0x7f020057;
         public static final int bond_of_flame=0x7f020058;
-        public static final int circle_of_life=0x7f020059;
-        public static final int circle_of_life_keychain=0x7f02005a;
-        public static final int decisive_pumpkin=0x7f02005b;
-        public static final int fatal_crest=0x7f02005c;
-        public static final int fenrir=0x7f02005d;
-        public static final int follow_the_wind=0x7f02005e;
-        public static final int gull_wing=0x7f02005f;
-        public static final int heroes_crest=0x7f020060;
-        public static final int hidden_dragon=0x7f020061;
-        public static final int ic_launcher=0x7f020062;
-        public static final int kingdom_key=0x7f020063;
-        public static final int monochrome=0x7f020064;
-        public static final int mysterious_abyss=0x7f020065;
-        public static final int oathkeeper=0x7f020066;
-        public static final int oblivion=0x7f020067;
-        public static final int photon_debugger=0x7f020068;
-        public static final int rumbling_rose=0x7f020069;
-        public static final int sleeping_lion=0x7f02006a;
-        public static final int star_seeker=0x7f02006b;
-        public static final int sweet_memories=0x7f02006c;
-        public static final int two_become_one=0x7f02006d;
-        public static final int ultima_weapon=0x7f02006e;
-        public static final int winners_proof=0x7f02006f;
-        public static final int wishing_lamp=0x7f020070;
+        public static final int bond_of_flame_keychain=0x7f020059;
+        public static final int circle_of_life=0x7f02005a;
+        public static final int circle_of_life_keychain=0x7f02005b;
+        public static final int decisive_pumpkin=0x7f02005c;
+        public static final int decisive_pumpkin_keychain=0x7f02005d;
+        public static final int fatal_crest=0x7f02005e;
+        public static final int fatal_crest_keychain=0x7f02005f;
+        public static final int fenrir=0x7f020060;
+        public static final int fenrir_keychain=0x7f020061;
+        public static final int follow_the_wind=0x7f020062;
+        public static final int follow_the_wind_keychain=0x7f020063;
+        public static final int guardian_soul_keychain=0x7f020064;
+        public static final int gull_wing=0x7f020065;
+        public static final int gull_wing_keychain=0x7f020066;
+        public static final int heroes_crest=0x7f020067;
+        public static final int heroes_crest_keychain=0x7f020068;
+        public static final int hidden_dragon=0x7f020069;
+        public static final int hidden_dragon_keychain=0x7f02006a;
+        public static final int ic_launcher=0x7f02006b;
+        public static final int kingdom_key=0x7f02006c;
+        public static final int kingdom_key_keychain=0x7f02006d;
+        public static final int monochrome=0x7f02006e;
+        public static final int monochrome_keychain=0x7f02006f;
+        public static final int mysterious_abyss=0x7f020070;
+        public static final int mysterious_abyss_keychain=0x7f020071;
+        public static final int oathkeeper=0x7f020072;
+        public static final int oathkeeper_keychain=0x7f020073;
+        public static final int oblivion=0x7f020074;
+        public static final int oblivion_keychain=0x7f020075;
+        public static final int photon_debugger=0x7f020076;
+        public static final int photon_debugger_keychain=0x7f020077;
+        public static final int rumbling_rose=0x7f020078;
+        public static final int rumbling_rose_keychain=0x7f020079;
+        public static final int sleeping_lion=0x7f02007a;
+        public static final int sleeping_lion_keychain=0x7f02007b;
+        public static final int star_seeker=0x7f02007c;
+        public static final int star_seeker_keychain=0x7f02007d;
+        public static final int sweet_memories=0x7f02007e;
+        public static final int sweet_memories_keychain=0x7f02007f;
+        public static final int two_become_one=0x7f020080;
+        public static final int two_become_one_keychain=0x7f020081;
+        public static final int ultima_weapon=0x7f020082;
+        public static final int ultima_weapon_keychain=0x7f020083;
+        public static final int winners_proof=0x7f020084;
+        public static final int winners_proof_keychain=0x7f020085;
+        public static final int wishing_lamp=0x7f020086;
+        public static final int wishing_lamp_keychain=0x7f020087;
     }
     public static final class id {
         public static final int II_button=0x7f060042;
