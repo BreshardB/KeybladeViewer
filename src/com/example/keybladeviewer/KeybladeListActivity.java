@@ -28,8 +28,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class KeybladeListActivity extends ListActivity {
-	
-	public static final String MESSAGE = "Clicked";
 
 	Keyblade[] keyblades;
 	
@@ -38,6 +36,8 @@ public class KeybladeListActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		Intent receive = getIntent();
 		
 		new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades));
 		

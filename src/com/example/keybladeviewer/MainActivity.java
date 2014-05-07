@@ -1,31 +1,25 @@
 package com.example.keybladeviewer;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
-public class MainActivity extends ActionBarActivity{
+public class MainActivity extends ActionBarActivity implements OnClickListener{
+	
+	Button mKHII;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        mKHII = (Button)findViewById(R.id.II_button);
+        mKHII.setOnClickListener(this);
     }
     
     @Override
@@ -47,4 +41,12 @@ public class MainActivity extends ActionBarActivity{
         }
         return super.onOptionsItemSelected(item);
     }
+
+	@Override
+	public void onClick(View v) {
+		Intent intent = new Intent(this, KeybladeListActivity.class);
+		intent.putExtra("Start List Activity", 0);
+		startActivity(intent);
+		
+	}
 }
