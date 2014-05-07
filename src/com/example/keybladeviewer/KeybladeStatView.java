@@ -5,10 +5,10 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class KeybladeStatView extends ActionBarActivity {
 
@@ -18,7 +18,11 @@ public class KeybladeStatView extends ActionBarActivity {
 		setContentView(R.layout.activity_keyblade_stat_view);
 
 		Intent intent = getIntent();
-	    String clickedKeyblade = intent.getStringExtra("Clicked");
+	    String name = intent.getStringExtra("name");
+	    String strength = intent.getStringExtra("strength");
+	    String magic = intent.getStringExtra("magic");
+	    String ability = intent.getStringExtra("ability");
+	    int position = intent.getIntExtra("position", 0);
 
         
         TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
@@ -30,8 +34,17 @@ public class KeybladeStatView extends ActionBarActivity {
 		
 		pics.recycle();
 		
-		ImageView image = (ImageView)findViewById(R.id.image);
-		image.setImageDrawable(drawables[0]);
+		ImageView mImage = (ImageView)findViewById(R.id.image);
+		TextView mName = (TextView)findViewById(R.id.name);
+		TextView mStrength = (TextView)findViewById(R.id.strength);
+		TextView mMagic = (TextView)findViewById(R.id.magic);
+		TextView mAbility = (TextView)findViewById(R.id.ability);
+		
+		mImage.setImageDrawable(drawables[position]);
+		mName.setText(name);
+		mStrength.setText(strength);
+		mMagic.setText(magic);
+		mAbility.setText(ability);
 	}
 
 	@Override

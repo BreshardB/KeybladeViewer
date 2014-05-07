@@ -132,7 +132,11 @@ public class KeybladeListActivity extends ListActivity {
 			Intent intent = new Intent(KeybladeListActivity.this, KeybladeStatView.class);
 			Log.d("BJB", keyblades[position].name);
 			
-			intent.putExtra("Clicked", keyblades[position].name);
+			intent.putExtra("name", keyblades[position].name);
+			intent.putExtra("strength", keyblades[position].strength);
+			intent.putExtra("magic", keyblades[position].magic);
+			intent.putExtra("ability", keyblades[position].ability);
+			intent.putExtra("position", position);
 			
 			startActivity(intent);
 		}
