@@ -16,6 +16,14 @@ public class Keyblade implements Parcelable{
 		this.ability = "";
 	}
 	
+	// example constructor that takes a Parcel and gives you an object populated with it's values
+    public Keyblade(Parcel in) {
+    	name = in.readString();
+        strength = in.readString();
+        magic = in.readString();
+        ability = in.readString();
+    }
+	
 	@Override
 	public int describeContents() {
 		return 0;
@@ -39,12 +47,4 @@ public class Keyblade implements Parcelable{
             return new Keyblade[size];
         }
     };
-
-    // example constructor that takes a Parcel and gives you an object populated with it's values
-    private Keyblade(Parcel in) {
-    	name = in.readString();
-        strength = in.readString();
-        magic = in.readString();
-        ability = in.readString();
-    }
 }

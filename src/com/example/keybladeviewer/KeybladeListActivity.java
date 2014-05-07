@@ -29,7 +29,7 @@ import android.widget.TextView;
 
 public class KeybladeListActivity extends ListActivity {
 	
-	public static final String MESSAGE = "Keyblade Clicked";
+	public static final String MESSAGE = "Clicked";
 
 	Keyblade[] keyblades;
 	
@@ -131,13 +131,9 @@ public class KeybladeListActivity extends ListActivity {
 				long id) {
 			Intent intent = new Intent(KeybladeListActivity.this, KeybladeStatView.class);
 			Log.d("BJB", keyblades[position].name);
-			intent.putExtra(MESSAGE, keyblades[position]);
-			Parcelable object = (Parcelable)keyblades[position];
-			if(object == null) {
-				Log.d("BJB", "This thing is null");
-			} else {
-				Log.d("BJB", object.toString());
-			}
+			
+			intent.putExtra("Clicked", keyblades[position].name);
+			
 			startActivity(intent);
 		}
     }

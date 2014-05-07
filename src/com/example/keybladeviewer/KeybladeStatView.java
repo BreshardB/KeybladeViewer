@@ -18,11 +18,8 @@ public class KeybladeStatView extends ActionBarActivity {
 		setContentView(R.layout.activity_keyblade_stat_view);
 
 		Intent intent = getIntent();
-		if(intent.getParcelableExtra("Keyblade Clicked") != null) {
-			Keyblade clickedKeyblade = (Keyblade) intent.getParcelableExtra("Keyblade Clicked");
-		} else {
-			Log.d("BJB", "Something isn't right");
-		}
+	    String clickedKeyblade = intent.getStringExtra("Clicked");
+
         
         TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
 		Drawable[] drawables = new Drawable[pics.length()];	 
