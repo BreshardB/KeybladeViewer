@@ -7,5 +7,43 @@
     tools:context="com.example.keybladeviewer.MainActivity"
     tools:ignore="MergeRootFrame" >
     
-    </FrameLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingTop="20dp">
+	    <Button
+	        android:id="@+id/I_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/kh_I"/>
+	    <Button
+	        android:id="@+id/II_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/kh_II"/>
+	    <Button
+	        android:id="@+id/bbs_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/kh_bbs"/>
+	    <Button
+	        android:id="@+id/d3_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/kh_3d"/>
+	    <Button
+	        android:id="@+id/com_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/kh_com"/>
+	    <Button
+	        android:id="@+id/days_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/kh_days"/>
+    </LinearLayout>
+    
+</FrameLayout>
 
