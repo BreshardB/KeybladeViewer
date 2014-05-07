@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -18,12 +19,16 @@ public class KeybladeStatView extends ActionBarActivity {
 		setContentView(R.layout.activity_keyblade_stat_view);
 
 		Intent intent = getIntent();
-	    String name = intent.getStringExtra("name");
-	    String strength = intent.getStringExtra("strength");
-	    String magic = intent.getStringExtra("magic");
-	    String ability = intent.getStringExtra("ability");
-	    int position = intent.getIntExtra("position", 0);
-
+		Keyblade intendedKey = (Keyblade)intent.getParcelableExtra("Keyblade");
+		int position = intent.getIntExtra("position", 0);
+		
+	    String name = intendedKey.name;
+	    String strength = intendedKey.strength;
+	    String magic = intendedKey.magic;
+	    String ability = intendedKey.ability;
+		
+		Log.d("BJB", intendedKey.name);
+	    
         
         TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
 		Drawable[] drawables = new Drawable[pics.length()];	 
