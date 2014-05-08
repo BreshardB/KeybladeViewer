@@ -1042,8 +1042,6 @@ containing a value of this type.
         public static final int wishing_lamp_keychain=0x7f020087;
     }
     public static final class id {
-        public static final int II_button=0x7f060047;
-        public static final int I_button=0x7f060046;
         public static final int ability=0x7f060045;
         public static final int ability_title=0x7f060044;
         public static final int action_bar=0x7f06001c;
@@ -1057,17 +1055,14 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f06004c;
+        public static final int action_settings=0x7f060047;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
-        public static final int bbs_button=0x7f060048;
         public static final int beginning=0x7f060011;
+        public static final int button=0x7f060046;
         public static final int checkbox=0x7f06002d;
         public static final int collapseActionView=0x7f06000d;
-        public static final int com_button=0x7f06004a;
         public static final int container=0x7f06003c;
-        public static final int d3_button=0x7f060049;
-        public static final int days_button=0x7f06004b;
         public static final int default_activity_button=0x7f060028;
         public static final int dialog=0x7f06000e;
         public static final int disableHome=0x7f060008;
@@ -1226,13 +1221,8 @@ containing a value of this type.
         public static final int ability=0x7f0b0012;
         public static final int action_settings=0x7f0b000f;
         public static final int app_name=0x7f0b000d;
+        public static final int button=0x7f0b0015;
         public static final int hello_world=0x7f0b000e;
-        public static final int kh_3d=0x7f0b0018;
-        public static final int kh_I=0x7f0b0015;
-        public static final int kh_II=0x7f0b0016;
-        public static final int kh_bbs=0x7f0b0017;
-        public static final int kh_com=0x7f0b0019;
-        public static final int kh_days=0x7f0b001a;
         public static final int magic=0x7f0b0011;
         public static final int strength=0x7f0b0010;
         public static final int title_activity_keyblade_list=0x7f0b0013;

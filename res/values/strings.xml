@@ -9,11 +9,6 @@
     <string name="ability">Ability</string>
     <string name="title_activity_keyblade_list">KeybladeListActivity</string>
     <string name="title_activity_keyblade_stat_view">KeybladeStatView</string>
-    <string name="kh_I">Kingdom Hearts I</string>
-    <string name="kh_II">Kingdom Hearts II</string>
-    <string name="kh_bbs">Birth By Sleep</string>
-    <string name="kh_3d">Dream Drop Distance</string>
-    <string name="kh_com">Chain of Memories</string>
-    <string name="kh_days">358/2 Days</string>
+    <string name="button">Look Up Some Keyblades!</string>
 
 </resources>

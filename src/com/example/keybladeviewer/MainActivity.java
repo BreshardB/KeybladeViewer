@@ -11,15 +11,15 @@ import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity implements OnClickListener{
 	
-	Button mKHII;
+	Button mButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        mKHII = (Button)findViewById(R.id.II_button);
-        mKHII.setOnClickListener(this);
+        mButton = (Button)findViewById(R.id.button);
+        mButton.setOnClickListener(this);
     }
     
     @Override
@@ -47,6 +47,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener{
 		Intent intent = new Intent(this, KeybladeListActivity.class);
 		intent.putExtra("Start List Activity", 0);
 		startActivity(intent);
-		overridePendingTransition(R.anim.slide_out, R.anim.slide_in);
+		overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 	}
 }
