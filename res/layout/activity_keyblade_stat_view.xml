@@ -76,10 +76,23 @@
 	    
 	</LinearLayout>
     
+	<TextView
+	    android:id="@+id/ability_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stats"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="@string/ability"
+        android:background="@color/green"
+	    android:textColor="@color/white"/>
     <TextView
         android:id="@+id/ability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ability_title"
+        android:gravity="center"
+        android:textSize="20sp"/>
     
 </RelativeLayout>
 
