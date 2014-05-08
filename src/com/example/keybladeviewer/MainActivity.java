@@ -47,6 +47,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener{
 		Intent intent = new Intent(this, KeybladeListActivity.class);
 		intent.putExtra("Start List Activity", 0);
 		startActivity(intent);
-		
+		overridePendingTransition(R.anim.slide_out, R.anim.slide_in);
 	}
 }

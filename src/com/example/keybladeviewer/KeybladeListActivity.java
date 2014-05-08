@@ -137,6 +137,7 @@ public class KeybladeListActivity extends ListActivity {
 			intent.putExtra("position", position);
 			
 			startActivity(intent);
+			overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 		}
     }
 	
