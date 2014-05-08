@@ -31,25 +31,31 @@ public class KeybladeStatView extends ActionBarActivity {
 	    
         
         TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
-		Drawable[] drawables = new Drawable[pics.length()];	 
+        TypedArray icons = getResources().obtainTypedArray(R.array.keychain_large_icons);
+		Drawable[] drawables = new Drawable[pics.length()];	
+		Drawable[] keychains = new Drawable[icons.length()];
 
 		for (int i = 0; i < pics.length(); i++) {
 			drawables[i] = pics.getDrawable(i);
+			keychains[i] = icons.getDrawable(i);
 		}
 		
 		pics.recycle();
+		icons.recycle();
 		
 		ImageView mImage = (ImageView)findViewById(R.id.image);
 		TextView mName = (TextView)findViewById(R.id.name);
 		TextView mStrength = (TextView)findViewById(R.id.strength);
 		TextView mMagic = (TextView)findViewById(R.id.magic);
 		TextView mAbility = (TextView)findViewById(R.id.ability);
+		ImageView mKeychain = (ImageView)findViewById(R.id.keychain);
 		
 		mImage.setImageDrawable(drawables[position]);
 		mName.setText(name);
 		mStrength.setText(strength);
 		mMagic.setText(magic);
 		mAbility.setText(ability);
+		mKeychain.setImageDrawable(keychains[position]);
 	}
 
 	@Override

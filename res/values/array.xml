@@ -50,4 +50,29 @@
         <item>@drawable/oblivion_keychain</item>
         <item>@drawable/ultima_weapon_keychain</item>
     </array>
+    <array name="keychain_large_icons">
+        <item>@drawable/kingdom_key_keychain_large</item>
+        <item>@drawable/star_seeker_keychain_large</item>
+        <item>@drawable/hidden_dragon_keychain_large</item>
+        <item>@drawable/follow_the_wind_keychain_large</item>
+        <item>@drawable/monochrome_keychain_large</item>
+        <item>@drawable/circle_of_life_keychain_large</item>
+        <item>@drawable/heroes_crest_keychain_large</item>
+        <item>@drawable/wishing_lamp_keychain_large</item>
+        <item>@drawable/decisive_pumpkin_keychain_large</item>
+        <item>@drawable/mysterious_abyss_keychain_large</item>
+        <item>@drawable/rumbling_rose_keychain_large</item>
+        <item>@drawable/photon_debugger_keychain_large</item>
+        <item>@drawable/sweet_memories_keychain_large</item>
+        <item>@drawable/gull_wing_keychain_large</item>
+        <item>@drawable/bond_of_flame_keychain_large</item>
+        <item>@drawable/sleeping_lion_keychain_large</item>
+        <item>@drawable/fatal_crest_keychain_large</item>
+        <item>@drawable/fenrir_keychain_large</item>
+        <item>@drawable/two_become_one_keychain_large</item>
+        <item>@drawable/winners_proof_keychain_large</item>
+        <item>@drawable/oathkeeper_keychain_large</item>
+        <item>@drawable/oblivion_keychain_large</item>
+        <item>@drawable/ultima_weapon_keychain_large</item>
+    </array>
 </resources>
