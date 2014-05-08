@@ -18,6 +18,7 @@ public class KeybladeStatView extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_keyblade_stat_view);
 
+		//Gain parcelable object from intent
 		Intent intent = getIntent();
 		Keyblade intendedKey = (Keyblade)intent.getParcelableExtra("Keyblade");
 		int position = intent.getIntExtra("position", 0);
@@ -26,10 +27,8 @@ public class KeybladeStatView extends ActionBarActivity {
 	    String strength = intendedKey.strength;
 	    String magic = intendedKey.magic;
 	    String ability = intendedKey.ability;
-		
-		Log.d("BJB", intendedKey.name);
 	    
-        
+        //Get necessary drawables to be displayed
         TypedArray pics = getResources().obtainTypedArray(R.array.keyblade_pics);
         TypedArray icons = getResources().obtainTypedArray(R.array.keychain_large_icons);
 		Drawable[] drawables = new Drawable[pics.length()];	

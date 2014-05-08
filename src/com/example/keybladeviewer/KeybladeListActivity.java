@@ -39,6 +39,7 @@ public class KeybladeListActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		//Get intent from clicking on list item
 		Intent receive = getIntent();
 		
 		new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades));
@@ -77,6 +78,7 @@ public class KeybladeListActivity extends ListActivity {
 			BufferedReader br;
 			InputStream is; 
 			try {
+				//Parse JSON file from res/raw
 				is = getResources().openRawResource(params[0].intValue());
 				br = new BufferedReader(new InputStreamReader(is));
 				String json = "";
@@ -90,6 +92,7 @@ public class KeybladeListActivity extends ListActivity {
 				JSONArray keybladeArray = (JSONArray)keybladeJSON.getJSONArray("keyblades");
 				temp_keys = new Keyblade[keybladeArray.length()];
 				
+				//Assign array of Keyblade objects necessary information from JSON array
 				for(int i = 0; i < temp_keys.length; i++) {
 					temp_keys[i] = new Keyblade();
 					JSONObject temp = (JSONObject)keybladeArray.get(i);
@@ -137,6 +140,9 @@ public class KeybladeListActivity extends ListActivity {
 			intent.putExtra("position", position);
 			
 			startActivity(intent);
+			//Activates slide animation
+			//Code gathered from here:
+			//http://stackoverflow.com/questions/5151591/android-left-to-right-slide-animation
 			overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 		}
     }

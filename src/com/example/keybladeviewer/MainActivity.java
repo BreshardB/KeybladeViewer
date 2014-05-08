@@ -46,7 +46,10 @@ public class MainActivity extends ActionBarActivity implements OnClickListener{
 	public void onClick(View v) {
 		Intent intent = new Intent(this, KeybladeListActivity.class);
 		intent.putExtra("Start List Activity", 0);
-		startActivity(intent);
+		startActivity(intent); 
+		//Activates slide animation
+		//Code gathered from here:
+		//http://stackoverflow.com/questions/5151591/android-left-to-right-slide-animation
 		overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 	}
 }

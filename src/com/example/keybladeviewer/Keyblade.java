@@ -3,6 +3,7 @@ package com.example.keybladeviewer;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+//Class to hold necessary information for each keyblade
 public class Keyblade implements Parcelable{
 	String name;
 	String strength;
@@ -15,6 +16,9 @@ public class Keyblade implements Parcelable{
 		this.magic = "";
 		this.ability = "";
 	}
+	
+	//Parcelable code gathered from here:
+	//http://stackoverflow.com/questions/2139134/how-to-send-an-object-from-one-android-activity-to-another-using-intents
 	
 	// example constructor that takes a Parcel and gives you an object populated with it's values
     public Keyblade(Parcel in) {
