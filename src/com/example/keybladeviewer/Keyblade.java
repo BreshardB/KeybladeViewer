@@ -14,7 +14,8 @@ public class Keyblade implements Parcelable{
 	String critBonus;
 	String recoil;
 	String length;
-	//Drawable image;
+	String image;
+	String keychain;
 	
 	public Keyblade() {
 		this.name = "";
@@ -25,6 +26,8 @@ public class Keyblade implements Parcelable{
 		this.critBonus = "";
 		this.recoil = "";
 		this.length = "";
+		this.image = "";
+		this.keychain = "";
 	}
 	
 	//Parcelable code gathered from here:
@@ -40,6 +43,8 @@ public class Keyblade implements Parcelable{
         critBonus = in.readString();
         recoil = in.readString();
         length = in.readString();
+        image = in.readString();
+        keychain = in.readString();
     }
 	
 	@Override
@@ -57,6 +62,8 @@ public class Keyblade implements Parcelable{
 		dest.writeString(critBonus);
 		dest.writeString(recoil);
 		dest.writeString(length);
+		dest.writeString(image);
+		dest.writeString(keychain);
 	}
 	
 	// this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
