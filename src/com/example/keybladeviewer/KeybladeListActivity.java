@@ -42,7 +42,7 @@ public class KeybladeListActivity extends ListActivity {
 		//Get intent from clicking on list item
 		Intent receive = getIntent();
 		
-		new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades));
+		new DownloadKeybladeJSON().execute(Integer.valueOf(R.raw.keyblades_two));
 		
 	}
 
