@@ -1,5 +1,6 @@
 package com.example.keybladeviewer;
 
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -9,12 +10,21 @@ public class Keyblade implements Parcelable{
 	String strength;
 	String magic;
 	String ability;
+	String critRate;
+	String critBonus;
+	String recoil;
+	String length;
+	//Drawable image;
 	
 	public Keyblade() {
 		this.name = "";
 		this.strength = "";
 		this.magic = "";
 		this.ability = "";
+		this.critRate = "";
+		this.critBonus = "";
+		this.recoil = "";
+		this.length = "";
 	}
 	
 	//Parcelable code gathered from here:
@@ -26,6 +36,10 @@ public class Keyblade implements Parcelable{
         strength = in.readString();
         magic = in.readString();
         ability = in.readString();
+        critRate = in.readString();
+        critBonus = in.readString();
+        recoil = in.readString();
+        length = in.readString();
     }
 	
 	@Override
@@ -39,6 +53,10 @@ public class Keyblade implements Parcelable{
 		dest.writeString(strength);
 		dest.writeString(magic);
 		dest.writeString(ability);
+		dest.writeString(critRate);
+		dest.writeString(critBonus);
+		dest.writeString(recoil);
+		dest.writeString(length);
 	}
 	
 	// this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
